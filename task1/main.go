@@ -3,15 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	remainder(8)
-	remainder(5)
+	fmt.Println(Remainder(8))
+	fmt.Println(Remainder(5))
+
 }
 
-func remainder(n int) {
+func Remainder(n int) string {
+	res := ""
 	if n%2 == 0 {
-		fmt.Println("YES")
+		res = "YES"
+		return res
 	} else {
-		fmt.Println("NO")
+		res = "NO"
 	}
 
+	return res
 }
