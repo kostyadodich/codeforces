@@ -11,19 +11,16 @@ func main() {
 }
 
 func Finalist(n []int) int {
-	var res int
+	low := n[len(n)-1]
+	countLow := 0
 
-	for i, v := range n {
-		if i == len(n)-1 {
+	for i := len(n) - 1; i >= 0; i-- {
+		if n[i] == low {
+			countLow++
+		} else {
 			break
-		}
-		if v == n[len(n)-1] {
-			break
-		}
-		if v >= n[i+1] && n[i] != n[len(n)-1] {
-			res++
 		}
 	}
 
-	return res
+	return len(n) - countLow
 }
