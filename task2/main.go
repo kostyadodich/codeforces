@@ -1,12 +1,27 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 )
 
 func main() {
-	fmt.Println(TrimString("東東東東東東東東東東東"))
+	scanner := bufio.NewScanner(os.Stdin)
+
+	scanner.Scan()
+	n, _ := strconv.Atoi(scanner.Text())
+
+	input := make([]string, 0, n)
+	for range make([]struct{}, n) {
+		scanner.Scan()
+		input = append(input, scanner.Text())
+	}
+
+	for _, s := range input {
+		fmt.Println(TrimString(s))
+	}
 
 }
 
